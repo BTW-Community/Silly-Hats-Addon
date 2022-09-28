@@ -1,5 +1,6 @@
 # Silly-Hats-Addon
-Silly Hats for BTW CE
+
+![model](https://user-images.githubusercontent.com/25046819/192658189-a4cdfa53-c119-4592-a4aa-11c81c9b281c.png)
 
 # Ignored Files
 The following classes have been ignored as they contained too much BTW and Vanilla code. These are base edits that in the future will be replaced by a hook.
