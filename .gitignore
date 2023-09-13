@@ -1,9 +1,22 @@
+# Ignore Gradle project-specific cache directory
+.gradle
 
-minecraft/net/minecraft/src/Block.java
-minecraft/net/minecraft/src/DecoDefs.java
-minecraft/net/minecraft/src/DecoManager.java
-minecraft/net/minecraft/src/Item.java
-minecraft/net/minecraft/src/RenderPlayer.java
-minecraft/net/minecraft/src/FCBlockSkull.java
-minecraft/net/minecraft/src/ItemSkull.java
-minecraft/net/minecraft/src/FCBlockPumpkin.java
+# Ignore Gradle build output directories
+**/build/
+!src/**/build/
+
+# Screws up the MC dev plugin for IntelliJ..
+# src/btw/**
+
+# Ignore local Minecraft folder
+.minecraft
+
+# IntelliJ
+*.iml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/assetWizardSettings.xml
+.idea/dictionaries
+.idea/libraries
+.idea/jarRepositories.xml
