@@ -1,69 +1,143 @@
-# BTW-gradle-fabric-example
+# Silly Hats Addon
+Ever felt like there weren't enough hats to wear and mob heads to collect? 
 
-This repository is based on the [BTW-Gradle](https://github.com/BTW-Community/BTW-gradle) and the [Example Mod](https://github.com/minecraft-cursed-legacy/Example-Mod)
-repositories, combining them to enable fabric development for the Better Than Wolves mod.
-**This repository was only tested for client-side development yet.** 
+Well lucky you!
 
-## Quick Start
+The Silly Hats Addon brings you 28 Silly Hats and 95 different Mob Heads!
 
-* Clone this repository
-* Acquire the full BTW sources and put them under `src/btw/java` 
-* (Optional) Put the BTW resources (textures, etc.) under `src/btw/resources`
-* Run the gradle task *btwJar*
-* Run the gradle task *build* and then *runClient*
-* (Optional) Put the vanilla MC resources (sounds) under `run/resources`
-
-## BTW Source Code
-
-To get access to the Better Than Wolves source code, please refer to the [BTW-Gradle repository](https://github.com/BTW-Community/BTW-gradle)
- or (alternatively) the [BTW-Public repository](https://github.com/BTW-Community/BTW-Public), which also offers a way to generate the sources.
-
-## Development
-
-Similar to the [BTW-Gradle](https://github.com/BTW-Community/BTW-gradle) project, this repository comes with a few configuration files for IntelliJ IDEA.
-
-In this repository, there is an example implementation of a fabric mod that is a BTW-Addon at the same time. Base class overwrites,
-either for initializing your BTW-Addon or for changes to the functionality of MC are in many cases not needed 
-anymore. (But they are still possible, put the overwriting-sources under `main/java/net/minecraft/src`.
- This requires your mod to be loaded as a coremod, which is currently not supported in a dev-environment - only in production.) The
-addon initialization is taken care of by the PreLaunchInitializer.
+Some even glow at night! Can you collect all of them?
  
-For functionality changes to base classes, please have a look at mixins, which enable you
-to inject code at runtime, offering much better compatibility. Most fabric-mixin tutorials should apply here, but keep in
-mind that no fabric-api is available yet, just bare mixins. An even more powerful alternative is fabric-asm, but this has not
-been tested yet.
+**Hats:**
+![display_hats](https://github.com/BTW-Community/Silly-Hats-Addon/assets/25046819/6e23c298-f5da-464a-8602-5e7120ce2bc9)
+**Mob Heads:**
 
-If you use reflection, please keep in mind that it is now, in many cases at least, not needed anymore, in addition to the fact that fabric
-remaps Minecraft at runtime into an intermediary form, which is different from the obfuscated one. To get the intermediary names
-of classes, fields, and methods, have a look at the mappings under `custom_mappings`.
+![newheads](https://github.com/BTW-Community/Silly-Hats-Addon/assets/25046819/47d1f8a0-9f0a-4688-b518-31038a2eb120)
+## 👒 Hat Crafting Recipes
 
-## Releasing Mods/Addons
+  <details>
+  <summary>Famer's Hat</summary>
+  <img src="https://imgur.com/o05WWK1.png">
+  </details>
+  <details>
+  <summary>Top Hat</summary>
+  <img src="https://imgur.com/nUtdocD.gif">
+  </details>
+  <details>
+  <summary>Chef's Hat</summary>
+  <img src="https://imgur.com/ERSct53.png">
+  </details>
+  <details>
+  <summary>Floqwe Crown</summary>
+  <img src="https://imgur.com/weB4Fl8.gif">
+  </details>
+  <details>
+  <summary>Icy's Big Hat</summary>
+  <img src="https://imgur.com/K2DA2jL.png">
+  </details>
+  <details>
+  <summary>Ushanka</summary>
+  <img src="https://imgur.com/TfNStDL.png">
+  </details>
+  <details>
+  <summary>BTW Cap</summary>
+  <img src="https://imgur.com/QoGoF2s.png">
+  </details>
+  <details>
+  <summary>Fez</summary>
+  <img src="https://imgur.com/iCNCHLl.gif">
+  </details>
+  <details>
+  <summary>Fruit Bowl</summary>
+  <img src="https://imgur.com/cksRmDZ.png">
+  </details>
 
-If you want to run fabric mods with BTW in a non-dev environment, you have to either use 
-the [BTW-fabric MultiMC instance](https://github.com/BTW-Community/cursed-fabric-loader/releases/latest) (recommended) or 
-follow the [installation instructions for the Vanilla launcher](https://github.com/BTW-Community/legacy-fabric-installer/releases/latest).
+## 🎩 How do you get the other hats?
 
+- Witch's Hat: Dropped by Witches (10% Chance)
+- Wolf Hat: Dropped by Wolves (10% Chance)
+- Beast Hat: Dropped by Beasts (10% Chance)
+- Squid Hat: Dropped by Squid (10% Chance)
+- Frog Hat: Dropped by Witches, if killed by a Skeleton (100% Chance)
+- Pumpkin Hat: Dropped by shearing a Snowman (100% Chance)
+- Icy's Dino Hat: Can be found in Jungle Temples (20% Chance)
+- Spider Hat: Dropped by Jungle Spider (10% Chance)
+- Pirate's Hat: Dropped by the player, if killed by a Squid (20% Chance)
+- Mushroom Hats: Dropped by Mooshrooms (10% Chance, 50/50 Chance of getting a red or a brown one)
 
-Drop on by the discord server if you need help: [BTW Discord](https://discord.gg/fhMK5kx). 
+## 💀 And what about the Mob Heads?
 
-The mod file for the release is generated by the Gradle task *remapJar* and then put into `release`.
+Mob Heads are dropped by their specific mobs. 
+The drop rate is unchanged from other mobs dropping their Head or Skull.
+Meaning a Battleaxe or Chopping Blocks increase the drop rate.
+- Entities with different states drop corresponding Mob Head variants - e.g. Hunger Level.
+- Animals that can wear Breeding Harness have a related Mob Head.
+- Sheep drop a Mob Head in the color of their fleece, but the head drop is only guaranteed when grown up from a baby sheep. 
 
-After successfully importing the MultiMC instance, you can put your mod file into the mods folder of your installation. 
-If it is a coremod, put it into coremods.
+## 🐛 Found a bug or having issues?
+Feel free to create an issue in the [Issue Tracker](https://github.com/BTW-Community/Silly-Hats-Addon/issues)
 
-## Issues & Troubleshooting
+## ⚙ Compatibility
+<details>
+  <summary>Mixins</summary>
 
-* How do I obtain the BTW-sources? *Please refer to [BTW-Gradle](https://github.com/BTW-Community/BTW-gradle) or [BTW-Public](https://github.com/BTW-Community/BTW-Public).* 
+  - ComponentScatteredFeatureJunglePyramid
+  - RenderPlayer
+  - RenderSnowman
+  - ItemSkull
+  - SkullBlock
+  - SlotArmor
+  - EntityPlayerMP
+  - OcelotEntity
+  - ChickenEntity
+  - CowEntity
+  - PigEntity
+  - SheepEntity
+  - MooshroomEntity
+  - WolfEntity
+  - DireWolfEntity
+  - VillagerEntity
+  - WitchEntity
+  - ZombieEntity
+  - EntityIronGolem
+  - SnowmanEntity
+  - CreeperEntity
+  - EndermanEntity
+  - SpiderEntity
+  - JungleSpiderEntity
+  - EntityCaveSpider
+  - BlazeEntity
+  - GhastEntity
+  - MagmaCubeEntity
+  - ZombiePigmanEntity
+  - SlimeEntity
+  - SquidEntity
+  - BatEntity
+</details>
 
-More troubleshooting is still todo. Feel free to message me on Discord.
+<details>
+  <summary>Access Wideners</summary>
+  
+#### Classes
+  - SlotArmor
+  - ComponentScatteredFeature
+#### Methods
+  - dropHead (EntityLiving)
+  - getIconIndex (Item)
+</details>
 
-## MultiMC Remarks
-* The MultiMC instance should support most BTW versions and their addons, install them normally via `Add to Minecraft.jar`.
-* Addons developed outside of the fabric environment that use 
-Java reflection might not work if they reference obfuscated names via Strings (as mentioned above). 
-Porting those addons is a simple process though, as only the new intermediary names have to be adopted.
+## 💛 Credits and Thanks!
 
-## License
-This project incorporates:
-* A modified version of [Fabric Loom](https://github.com/FabricMC/fabric-loom) (MIT)
-* A precompiled version of [Tiny Remapper](https://github.com/FabricMC/tiny-remapper) (LGPL-3.0)
+- A lot of thanks to the BTW:CE Dev Team and the many BTW:CE Contributors
+- And to everyone helping me out with code, fixing errors, debugging, or giving feedback on the BTW:CE Discord <3
+- Alexandra Kateva: Bat Hat suggestion
+- AstroCore: Fruit Bowl Hat suggestion
+- AstroCore/Zhil: Spider Hat suggestion
+- AstroCore: Cowboy Hat suggestion
+- Icy: Icy's Big Hat suggestion
+- Hiracho: Frog Hat suggestion
+- ShadowDimentio/A^2: Cat Ears suggestion
+
+If  I forgot anyone, let me know and I'll add you to the list!
+
+## 📜 License
+This project is Licenced under: [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
