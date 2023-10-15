@@ -20,3 +20,9 @@ src/btw/**
 .idea/dictionaries
 .idea/libraries
 .idea/jarRepositories.xml
+
+# Silly Hats Addon
+libs/**
+run/**
+reobfuscated/**
+release/**
