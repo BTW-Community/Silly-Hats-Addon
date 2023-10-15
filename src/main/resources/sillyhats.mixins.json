@@ -1,0 +1,45 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "btw.community.sockthing.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "ComponentScatteredFeatureJunglePyramidMixin",
+    "RenderPlayerMixin",
+    "RenderSnowmanMixin",
+    "ItemSkullMixin",
+    "SkullBlockMixin",
+    "SlotArmorMixin",
+    "EntityPlayerMPMixin",
+    "OcelotEntityMixin",
+    "ChickenEntityMixin",
+    "CowEntityMixin",
+    "PigEntityMixin",
+    "SheepEntityMixin",
+    "MooshroomEntityMixin",
+    "WolfEntityMixin",
+    "DireWolfEntityMixin",
+    "VillagerEntityMixin",
+    "WitchEntityMixin",
+    "ZombieEntityMixin",
+    "EntityIronGolemMixin",
+    "SnowmanEntityMixin",
+    "CreeperEntityMixin",
+    "EndermanEntityMixin",
+    "SpiderEntityMixin",
+    "JungleSpiderEntityMixin",
+    "EntityCaveSpiderMixin",
+    "BlazeEntityMixin",
+    "GhastEntityMixin",
+    "MagmaCubeEntityMixin",
+    "ZombiePigmanEntityMixin",
+    "SlimeEntityMixin",
+    "SquidEntityMixin",
+    "BatEntityMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

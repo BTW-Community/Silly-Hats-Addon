@@ -1,0 +1,6 @@
+accessWidener v1 named
+
+extendable class net/minecraft/src/SlotArmor
+extendable class net/minecraft/src/ComponentScatteredFeature
+extendable method net/minecraft/src/EntityLiving dropHead ()V;
+extendable method net/minecraft/src/Item getIconIndex (Lnet/minecraft/src/ItemStack;)Lnet/minecraft/src/Icon;

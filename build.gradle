@@ -1,4 +1,4 @@
-import net.fabricmc.loom.task.RunClientTask
+    import net.fabricmc.loom.task.RunClientTask
 import net.fabricmc.loom.task.RunServerTask
 
 buildscript {
@@ -66,6 +66,10 @@ dependencies {
         transitive false
     }
 }
+
+loom {
+    accessWidener = file("src/main/resources/sillyhats.accesswidener")
+ }
 
 configurations {
     btwCompileClasspath.extendsFrom implementation, modImplementation

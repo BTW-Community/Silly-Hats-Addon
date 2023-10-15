@@ -4,12 +4,12 @@
   "version": "${version}",
 
   "name": "SillyHats",
-  "description": "Silly hats adds silly hat to wear and place!",
+  "description": "Silly hats adds silly hats to wear and place!",
   "authors": [
     "Sockthing"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
+    "homepage": "https://github.com/BTW-Community/Silly-Hats-Addon",
     "sources": "https://github.com/FabricMC/fabric-example-mod"
   },
 
@@ -18,17 +18,11 @@
 
   "environment": "*",
   "entrypoints": {
-    "init": [
-      "net.fabricmc.sockthing.ExampleMod"
-    ],
-    "preLaunch": [
-      "net.fabricmc.sockthing.ExamplePreLaunchInitializer"
-    ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "sillyhats.mixins.json"
   ],
-
+  "accessWidener" : "sillyhats.accesswidener",
   "depends": {
     "fabricloader": ">=0.7.4"
   },
