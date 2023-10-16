@@ -16,19 +16,19 @@ Some even glow at night! Can you collect all of them?
 
   <details>
   <summary>Famer's Hat</summary>
-  <img src="https://imgur.com/o05WWK1.png">
+  <img src="https://imgur.com/NCB5Q4X.png">
   </details>
   <details>
   <summary>Top Hat</summary>
-  <img src="https://imgur.com/nUtdocD.gif">
+  <img src="https://imgur.com/SpS2WUo.gif">
   </details>
   <details>
   <summary>Chef's Hat</summary>
-  <img src="https://imgur.com/ERSct53.png">
+  <img src="https://imgur.com/3VIMptB.png">
   </details>
   <details>
-  <summary>Floqwe Crown</summary>
-  <img src="https://imgur.com/weB4Fl8.gif">
+  <summary>Flower Crown</summary>
+  <img src="https://imgur.com/lKuioCp.gif">
   </details>
   <details>
   <summary>Icy's Big Hat</summary>
@@ -36,19 +36,47 @@ Some even glow at night! Can you collect all of them?
   </details>
   <details>
   <summary>Ushanka</summary>
-  <img src="https://imgur.com/TfNStDL.png">
+  <img src="https://imgur.com/pVXVWCq.png">
   </details>
   <details>
   <summary>BTW Cap</summary>
-  <img src="https://imgur.com/QoGoF2s.png">
+  <img src="https://imgur.com/KaPrCHD.png">
   </details>
   <details>
   <summary>Fez</summary>
-  <img src="https://imgur.com/iCNCHLl.gif">
+  <img src="https://imgur.com/y6xuM64.gif">
+  </details>
+  <details>
+  <summary>Santa Hat</summary>
+  <img src="https://imgur.com/OvjBfHB.png">
   </details>
   <details>
   <summary>Fruit Bowl</summary>
-  <img src="https://imgur.com/cksRmDZ.png">
+  <img src="https://imgur.com/oZT9NZ5.png">
+  </details>
+  <details>
+  <summary>Bat Hat</summary>
+  <img src="https://imgur.com/ELPUnAD.png">
+  </details>
+  <details>
+  <summary>Arrow Hat</summary>
+  <img src="https://imgur.com/GP10mxl.png">
+  </details>
+  <details>
+  <summary>Cowboy Hat</summary>
+  <img src="https://imgur.com/pVrPrhA.png">
+  </details>
+  <details>
+  <summary>Devil Horns</summary>
+  <img src="https://imgur.com/bWmXYb8.png">
+  </details>
+  <details>
+  <summary>Bandanna</summary>
+  <img src="https://imgur.com/iZfh6kY.png">
+  </details>
+  <details>
+  <summary>Cat Ears</summary>
+  <img src="https://imgur.com/ugLTGha.png">
   </details>
 
 ## 🎩 How do you get the other hats?
@@ -128,7 +156,8 @@ Feel free to create an issue in the [Issue Tracker](https://github.com/BTW-Commu
 ## 💛 Credits and Thanks!
 
 - A lot of thanks to the BTW:CE Dev Team and the many BTW:CE Contributors
-- And to everyone helping me out with code, fixing errors, debugging, or giving feedback on the BTW:CE Discord <3
+- Everyone helping me out with code, fixing errors, debugging, or giving feedback on the BTW:CE Discord <3
+- A^2, AstroCore and Hiracho for helping out filming the trailer
 - Alexandra Kateva: Bat Hat suggestion
 - AstroCore: Fruit Bowl Hat suggestion
 - AstroCore/Zhil: Spider Hat suggestion

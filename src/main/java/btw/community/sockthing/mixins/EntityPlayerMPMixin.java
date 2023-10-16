@@ -20,7 +20,7 @@ public abstract class EntityPlayerMPMixin extends EntityPlayer implements ICraft
             at = @At(value = "HEAD" ))
     public void dropPirateHat(DamageSource damageSource, CallbackInfo ci)
     {
-        if ( damageSource.getEntity() instanceof SquidEntity && rand.nextFloat() < 0.20F )
+        if ( !this.worldObj.isRemote && damageSource.getEntity() instanceof SquidEntity && rand.nextFloat() < 0.20F )
         {
             ItemStack hat = new ItemStack( SHItems.hat, 1, HatsUtil.PIRATE);
             dropPlayerItemWithRandomChoice(hat, true);

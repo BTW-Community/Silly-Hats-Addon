@@ -22,7 +22,7 @@ public abstract class JungleSpiderEntityMixin extends SpiderEntity {
 
     @Inject(method = "dropFewItems", at = @At(value = "TAIL"))
     public void dropHat(boolean killedByPlayer, int lootingModifier, CallbackInfo ci) {
-        if ( rand.nextFloat() <= 0.10F )
+        if ( !this.worldObj.isRemote && rand.nextFloat() <= 0.10F )
         {
             // drop jungle spiderhat
 

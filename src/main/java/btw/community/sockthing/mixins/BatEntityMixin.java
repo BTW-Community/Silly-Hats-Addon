@@ -22,7 +22,7 @@ public abstract class BatEntityMixin extends EntityBat {
 
     @Inject(method = "dropFewItems", at = @At(value = "TAIL"))
     public void dropHat(boolean killedByPlayer, int lootingModifier, CallbackInfo ci) {
-        if ( rand.nextFloat() <= 0.10F )
+        if ( !this.worldObj.isRemote && rand.nextFloat() <= 0.10F )
         {
             // drop bat hat
             entityDropItem( new ItemStack( SHItems.hat.itemID, 1, HatsUtil.BAT), 0F );

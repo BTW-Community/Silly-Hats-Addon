@@ -26,7 +26,7 @@ public abstract class WolfEntityMixin extends EntityWolf {
             shift = At.Shift.BEFORE
     ))
     public void dropWolfHat(CallbackInfoReturnable<Integer> cir) {
-        if ( rand.nextFloat() <= 0.10F )
+        if (!this.worldObj.isRemote && rand.nextFloat() <= 0.10F )
         {
             ItemStack hat = new ItemStack( SHItems.hat, 1, HatsUtil.WOLF);
             entityDropItem( hat, 0 );

@@ -3,11 +3,9 @@ package btw.community.sockthing;
 import btw.AddonHandler;
 import btw.BTWAddon;
 import btw.community.sockthing.block.SHBlocks;
-import btw.community.sockthing.block.tileentity.SHRenderMapper;
+import btw.community.sockthing.block.tileentity.TileEntityRenderMapper;
 import btw.community.sockthing.item.SHItems;
 import btw.community.sockthing.recipes.SHRecipes;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.server.MinecraftServer;
 
 public class SillyHatsAddon extends BTWAddon {
@@ -30,7 +28,7 @@ public class SillyHatsAddon extends BTWAddon {
     @Override
     public void postInitialize() {
         if (!MinecraftServer.getIsServer()) {
-            SHRenderMapper.initTileEntityRender();
+            TileEntityRenderMapper.initTileEntityRender();
         }
     }
 

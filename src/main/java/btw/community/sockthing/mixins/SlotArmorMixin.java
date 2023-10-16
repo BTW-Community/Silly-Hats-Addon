@@ -20,7 +20,7 @@ public abstract class SlotArmorMixin extends Slot {
     }
 
     @Inject(method = "isItemValid", at = @At(value = "HEAD"), cancellable = true)
-    public void isHat(ItemStack itemStack, CallbackInfoReturnable<Boolean> cir)
+    public void isItemValid(ItemStack itemStack, CallbackInfoReturnable<Boolean> cir)
     {
         if (itemStack.itemID == SHItems.hat.itemID && this.armorType == 0)
         {

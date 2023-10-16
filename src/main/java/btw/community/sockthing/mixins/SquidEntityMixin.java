@@ -20,7 +20,7 @@ public abstract class SquidEntityMixin extends EntityWaterMob {
 
     @Inject(method = "dropFewItems", at = @At(value = "HEAD"))
     public void dropSquidHat(boolean killedByPlayer, int lootingModifier, CallbackInfo ci) {
-        if ( rand.nextInt( 10 ) == 0 )
+        if ( !this.worldObj.isRemote && rand.nextInt( 10 ) == 0 )
         {
             ItemStack hat = new ItemStack( SHItems.hat, 1, HatsUtil.SQUID);
             entityDropItem( hat, 0 );

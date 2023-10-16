@@ -21,10 +21,8 @@ public abstract class SheepEntityMixin extends EntitySheep implements DomesticSh
 //    @Inject(method = "dropFewItems", at = @At(value = "HEAD"))
     @Inject(method = "dropFewItems", at = @At(value = "HEAD"))
     public void dropSquidHat(boolean killedByPlayer, int lootingModifier, CallbackInfo ci) {
-        if ( getIsDomestic() == 1 )
+        if ( !this.worldObj.isRemote && getIsDomestic() == 1 )
         {
-            System.out.println("DOMESTIC SHEEP");
-
             int fleeceColor = this.getFleeceColor();
             ItemStack mobHead = new ItemStack( SHItems.mobHead, 1, 16);
 
@@ -42,9 +40,6 @@ public abstract class SheepEntityMixin extends EntitySheep implements DomesticSh
             mobHead.getTagCompound().setInteger( "fleeceColor", fleeceColor );
 
             entityDropItem( mobHead, 0 );
-        }
-        else {
-            System.out.println("WILD SHEEP");
         }
     }
 

@@ -5,7 +5,7 @@ import net.fabricmc.api.Environment;
 import net.minecraft.src.TileEntityRenderer;
 
 @Environment(EnvType.CLIENT)
-public class SHRenderMapper {
+public class TileEntityRenderMapper {
     public static void initTileEntityRender() {
         TileEntityRenderer.instance.addSpecialRendererForClass (HatTileEntity.class, new HatTileEntityRenderer() );
 

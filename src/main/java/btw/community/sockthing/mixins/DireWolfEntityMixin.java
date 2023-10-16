@@ -20,7 +20,7 @@ public abstract class DireWolfEntityMixin extends EntityCreature implements IAni
 
     @Inject(method = "dropFewItems", at = @At(value = "TAIL"))
     public void dropWolfHat(boolean killedByPlayer, int lootingLevel, CallbackInfo ci) {
-        if ( rand.nextInt( 10 ) == 0 )
+        if (!this.worldObj.isRemote && rand.nextInt( 10 ) == 0 )
         {
             ItemStack hat = new ItemStack( SHItems.hat, 1, HatsUtil.BEAST);
             entityDropItem( hat, 0 );

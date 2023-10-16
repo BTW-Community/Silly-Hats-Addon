@@ -19,7 +19,7 @@ public class WitchEntityMixin extends EntityWitch{
 
     @Inject(method = "dropFewItems", at = @At(value = "HEAD"))
     public void dropWitchHat(boolean killedByPlayer, int lootingModifier, CallbackInfo ci) {
-        if ( rand.nextInt( 10 ) == 0 )
+        if (!this.worldObj.isRemote && rand.nextInt( 10 ) == 0 )
         {
             ItemStack hat = new ItemStack( SHItems.hat, 1, HatsUtil.WITCH);
             entityDropItem( hat, 0 );
