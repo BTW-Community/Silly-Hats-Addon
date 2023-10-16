@@ -20,7 +20,7 @@ Some even glow at night! Can you collect all of them?
   </details>
   <details>
   <summary>Top Hat</summary>
-  <img src="https://imgur.com/SpS2WUo.gif">
+  <img src="https://imgur.com/2l72hHl.gif">
   </details>
   <details>
   <summary>Chef's Hat</summary>
@@ -32,7 +32,7 @@ Some even glow at night! Can you collect all of them?
   </details>
   <details>
   <summary>Icy's Big Hat</summary>
-  <img src="https://imgur.com/K2DA2jL.png">
+  <img src="https://imgur.com/SpS2WUo.png">
   </details>
   <details>
   <summary>Ushanka</summary>
