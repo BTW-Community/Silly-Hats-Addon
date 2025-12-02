@@ -12,7 +12,7 @@ public class SillyHatsAddon extends BTWAddon {
     private static SillyHatsAddon instance;
 
     private SillyHatsAddon() {
-        super("Silly Hats", "1.0.0", "SH");
+        super("Silly Hats", "1.1.0", "SH");
     }
 
     @Override
