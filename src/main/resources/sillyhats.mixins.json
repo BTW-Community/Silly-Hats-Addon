@@ -33,6 +33,7 @@
     "SnowmanEntityMixin",
     "SpiderEntityMixin",
     "SquidEntityMixin",
+    "TileEntityNoteMixin",
     "VillagerEntityMixin",
     "WitchEntityMixin",
     "WolfEntityMixin",
