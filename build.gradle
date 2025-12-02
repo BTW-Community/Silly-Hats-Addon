@@ -69,6 +69,7 @@ dependencies {
 
 loom {
     accessWidener = file("src/main/resources/sillyhats.accesswidener")
+    downloadAssets.enabled = false
  }
 
 configurations {
