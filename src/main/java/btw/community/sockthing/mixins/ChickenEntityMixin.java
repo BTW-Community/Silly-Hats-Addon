@@ -4,7 +4,6 @@ import btw.community.sockthing.item.SHItems;
 import btw.community.sockthing.utils.MobHeadsUtil;
 import btw.entity.mob.ChickenEntity;
 import net.minecraft.src.EntityChicken;
-import net.minecraft.src.EntityOcelot;
 import net.minecraft.src.ItemStack;
 import net.minecraft.src.World;
 import org.spongepowered.asm.mixin.Mixin;

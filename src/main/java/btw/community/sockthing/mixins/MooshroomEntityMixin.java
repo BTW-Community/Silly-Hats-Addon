@@ -4,15 +4,10 @@ import btw.community.sockthing.item.SHItems;
 import btw.community.sockthing.utils.HatsUtil;
 import btw.community.sockthing.utils.MobHeadsUtil;
 import btw.entity.mob.CowEntity;
-import btw.entity.mob.PigEntity;
 import net.minecraft.src.EntityMooshroom;
-import net.minecraft.src.EntityPig;
 import net.minecraft.src.ItemStack;
 import net.minecraft.src.World;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(EntityMooshroom.class)
 public abstract class MooshroomEntityMixin extends CowEntity {

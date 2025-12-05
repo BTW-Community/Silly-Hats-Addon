@@ -1,9 +1,9 @@
 package btw.community.sockthing.item.items;
 
 import btw.community.sockthing.block.SHBlocks;
+import btw.community.sockthing.block.tileentity.MobHeadTileEntity;
 import btw.community.sockthing.utils.MobHeadType;
 import btw.community.sockthing.utils.MobHeadsUtil;
-import btw.community.sockthing.block.tileentity.MobHeadTileEntity;
 import btw.community.sockthing.utils.SheepHeadType;
 import btw.world.util.WorldUtils;
 import com.prupe.mcpatcher.cit.CITUtils;
@@ -12,7 +12,6 @@ import net.fabricmc.api.Environment;
 import net.minecraft.src.*;
 
 import java.util.List;
-import java.util.Map;
 
 public class MobHeadItem extends Item {
      private Block block;

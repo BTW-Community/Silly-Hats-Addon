@@ -3,7 +3,6 @@ package btw.community.sockthing.mixins;
 import btw.community.sockthing.item.items.HatItem;
 import btw.community.sockthing.item.items.MobHeadItem;
 import net.minecraft.src.EntityLiving;
-import net.minecraft.src.ItemArmor;
 import net.minecraft.src.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

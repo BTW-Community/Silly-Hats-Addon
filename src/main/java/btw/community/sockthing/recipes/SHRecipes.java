@@ -1,12 +1,10 @@
 package btw.community.sockthing.recipes;
 
 import btw.block.BTWBlocks;
-import btw.community.sockthing.block.SHBlocks;
 import btw.community.sockthing.item.SHItems;
 import btw.community.sockthing.utils.HatsUtil;
 import btw.community.sockthing.utils.MobHeadsUtil;
 import btw.crafting.recipe.RecipeManager;
-import btw.inventory.util.InventoryUtils;
 import btw.item.BTWItems;
 import net.minecraft.src.Block;
 import net.minecraft.src.Item;

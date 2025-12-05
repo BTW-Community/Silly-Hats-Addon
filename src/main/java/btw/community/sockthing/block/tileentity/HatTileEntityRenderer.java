@@ -1,9 +1,7 @@
 package btw.community.sockthing.block.tileentity;
 
 import btw.community.sockthing.block.models.HatModel;
-import btw.community.sockthing.block.models.MobHeadModel;
 import btw.community.sockthing.utils.HatsUtil;
-import btw.community.sockthing.utils.MobHeadsUtil;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.src.*;

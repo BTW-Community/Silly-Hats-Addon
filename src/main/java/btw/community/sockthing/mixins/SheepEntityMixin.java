@@ -1,7 +1,6 @@
 package btw.community.sockthing.mixins;
 
 import btw.community.sockthing.interfaces.DomesticSheepAccessor;
-import btw.community.sockthing.interfaces.PumpkinStatusAccessor;
 import btw.community.sockthing.item.SHItems;
 import btw.community.sockthing.utils.MobHeadsUtil;
 import btw.entity.mob.SheepEntity;

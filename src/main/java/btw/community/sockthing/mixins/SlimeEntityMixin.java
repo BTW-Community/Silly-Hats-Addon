@@ -2,9 +2,7 @@ package btw.community.sockthing.mixins;
 
 import btw.community.sockthing.item.SHItems;
 import btw.community.sockthing.utils.MobHeadsUtil;
-import btw.entity.mob.MagmaCubeEntity;
 import btw.entity.mob.SlimeEntity;
-import net.minecraft.src.EntityMagmaCube;
 import net.minecraft.src.EntitySlime;
 import net.minecraft.src.ItemStack;
 import net.minecraft.src.World;

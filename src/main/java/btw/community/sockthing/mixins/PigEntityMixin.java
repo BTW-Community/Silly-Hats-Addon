@@ -2,9 +2,7 @@ package btw.community.sockthing.mixins;
 
 import btw.community.sockthing.item.SHItems;
 import btw.community.sockthing.utils.MobHeadsUtil;
-import btw.entity.mob.ChickenEntity;
 import btw.entity.mob.PigEntity;
-import net.minecraft.src.EntityChicken;
 import net.minecraft.src.EntityPig;
 import net.minecraft.src.ItemStack;
 import net.minecraft.src.World;

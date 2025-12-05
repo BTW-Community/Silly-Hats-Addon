@@ -1,12 +1,7 @@
 package btw.community.sockthing.utils;
 
 import btw.community.sockthing.block.models.MobHeadModel;
-import btw.community.sockthing.block.models.VillagerHeadModel;
-import btw.community.sockthing.block.tileentity.MobHeadTileEntityRenderer;
 import net.minecraft.src.AxisAlignedBB;
-import net.minecraft.src.Entity;
-import net.minecraft.src.EntitySheep;
-import org.lwjgl.opengl.GL11;
 
 public class VillagerHeadType extends MobHeadType{
     public VillagerHeadType(int id, String name, String sound, float volume, float pitch, MobHeadModel model, String texture, String glowingTexture) {

@@ -2,9 +2,11 @@ package btw.community.sockthing.mixins;
 
 import btw.community.sockthing.item.SHItems;
 import btw.community.sockthing.utils.MobHeadsUtil;
-import btw.entity.mob.CowEntity;
 import btw.entity.mob.villager.VillagerEntity;
-import net.minecraft.src.*;
+import net.minecraft.src.DamageSource;
+import net.minecraft.src.EntityVillager;
+import net.minecraft.src.ItemStack;
+import net.minecraft.src.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 

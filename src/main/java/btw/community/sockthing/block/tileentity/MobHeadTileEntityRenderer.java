@@ -1,10 +1,10 @@
 package btw.community.sockthing.block.tileentity;
 
 import btw.community.sockthing.block.models.DragonHeadModel;
-import btw.community.sockthing.utils.MobHeadType;
-import btw.community.sockthing.utils.MobHeadsUtil;
 import btw.community.sockthing.block.models.MobHeadModel;
 import btw.community.sockthing.block.models.VillagerHeadModel;
+import btw.community.sockthing.utils.MobHeadType;
+import btw.community.sockthing.utils.MobHeadsUtil;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.src.*;

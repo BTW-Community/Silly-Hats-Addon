@@ -2,10 +2,8 @@ package btw.community.sockthing.mixins;
 
 import btw.community.sockthing.item.SHItems;
 import btw.community.sockthing.utils.MobHeadsUtil;
-import net.minecraft.src.Entity;
 import net.minecraft.src.EntityDragon;
 import net.minecraft.src.ItemStack;
-import net.minecraft.src.NBTTagCompound;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

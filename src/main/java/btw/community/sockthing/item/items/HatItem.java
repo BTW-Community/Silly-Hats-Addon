@@ -1,13 +1,11 @@
 package btw.community.sockthing.item.items;
 
-import btw.community.sockthing.block.models.VillagerHeadModel;
-import btw.community.sockthing.block.tileentity.MobHeadTileEntityRenderer;
-import btw.community.sockthing.utils.HatsUtil;
-import btw.community.sockthing.utils.MobHeadsUtil;
 import btw.community.sockthing.block.SHBlocks;
+import btw.community.sockthing.block.models.VillagerHeadModel;
 import btw.community.sockthing.block.tileentity.HatTileEntity;
 import btw.community.sockthing.block.tileentity.MobHeadTileEntity;
-import btw.community.sockthing.utils.VillagerHeadType;
+import btw.community.sockthing.utils.HatsUtil;
+import btw.community.sockthing.utils.MobHeadsUtil;
 import btw.world.util.WorldUtils;
 import net.minecraft.src.*;
 

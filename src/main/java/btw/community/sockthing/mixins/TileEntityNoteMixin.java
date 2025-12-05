@@ -3,7 +3,6 @@ package btw.community.sockthing.mixins;
 import btw.community.sockthing.block.SHBlocks;
 import btw.community.sockthing.block.tileentity.MobHeadTileEntity;
 import btw.community.sockthing.utils.MobHeadsUtil;
-import btw.entity.mob.SkeletonEntity;
 import net.minecraft.src.*;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

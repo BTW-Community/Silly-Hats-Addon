@@ -1,6 +1,5 @@
 package btw.community.sockthing.utils;
 
-import btw.community.sockthing.block.models.MobHeadModel;
 import btw.community.sockthing.block.tileentity.MobHeadTileEntityRenderer;
 import org.lwjgl.opengl.GL11;
 

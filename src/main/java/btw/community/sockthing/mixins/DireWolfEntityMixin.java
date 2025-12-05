@@ -4,13 +4,14 @@ import btw.community.sockthing.item.SHItems;
 import btw.community.sockthing.utils.HatsUtil;
 import btw.community.sockthing.utils.MobHeadsUtil;
 import btw.entity.mob.DireWolfEntity;
-import btw.entity.mob.WolfEntity;
-import net.minecraft.src.*;
+import net.minecraft.src.EntityCreature;
+import net.minecraft.src.IAnimals;
+import net.minecraft.src.ItemStack;
+import net.minecraft.src.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(DireWolfEntity.class)
 public abstract class DireWolfEntityMixin extends EntityCreature implements IAnimals {

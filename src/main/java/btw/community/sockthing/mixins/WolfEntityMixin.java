@@ -5,13 +5,11 @@ import btw.community.sockthing.utils.HatsUtil;
 import btw.community.sockthing.utils.MobHeadsUtil;
 import btw.entity.mob.WolfEntity;
 import net.minecraft.src.EntityWolf;
-import net.minecraft.src.Item;
 import net.minecraft.src.ItemStack;
 import net.minecraft.src.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(WolfEntity.class)

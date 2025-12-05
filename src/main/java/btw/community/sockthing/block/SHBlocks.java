@@ -3,14 +3,9 @@ package btw.community.sockthing.block;
 import btw.community.sockthing.block.blocks.HatBlock;
 import btw.community.sockthing.block.blocks.MobHeadBlock;
 import btw.community.sockthing.block.tileentity.HatTileEntity;
-import btw.community.sockthing.block.tileentity.HatTileEntityRenderer;
 import btw.community.sockthing.block.tileentity.MobHeadTileEntity;
-import btw.community.sockthing.block.tileentity.MobHeadTileEntityRenderer;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.src.Block;
 import net.minecraft.src.TileEntity;
-import net.minecraft.src.TileEntityRenderer;
 
 public class SHBlocks {
 

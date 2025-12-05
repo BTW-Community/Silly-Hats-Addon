@@ -1,13 +1,9 @@
 package btw.community.sockthing.utils;
 
-import btw.community.sockthing.item.items.MobHeadItem;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.src.AxisAlignedBB;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.TreeMap;
 
 public class MobHeadsUtil {

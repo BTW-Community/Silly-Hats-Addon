@@ -1,13 +1,8 @@
 package btw.community.sockthing.mixins;
 
-import btw.block.BTWBlocks;
-import btw.block.blocks.AestheticOpaqueBlock;
 import btw.community.sockthing.block.SHBlocks;
 import btw.community.sockthing.block.tileentity.HatTileEntity;
-import btw.community.sockthing.block.tileentity.MobHeadTileEntity;
 import btw.community.sockthing.utils.HatsUtil;
-import btw.community.sockthing.utils.MobHeadsUtil;
-import btw.item.BTWItems;
 import net.minecraft.src.*;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
