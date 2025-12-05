@@ -263,11 +263,11 @@ public class SHItems {
                 MobHeadsUtil.BAT, "bat",
                 "mob.bat.idle"));
 
-//        MobHeadsUtil.addNewMobHead( new DragonHeadType(
-//                MobHeadsUtil.DRAGON, "dragon",
-//                "mob.dragon.say", 1.0F, 1.0F,
-//                MobHeadTileEntityRenderer.DRAGON,
-//                "/shmodtex/heads/dragon.png", "/shmodtex/heads/dragon_eyes.png"));
+        MobHeadsUtil.addNewMobHead( new DragonHeadType(
+                MobHeadsUtil.DRAGON, "dragon",
+                "mob.dragon.say", 1.0F, 1.0F,
+                MobHeadTileEntityRenderer.DRAGON,
+                "/shmodtex/heads/dragon.png", "/shmodtex/heads/dragon_eyes.png"));
 
     }
 }

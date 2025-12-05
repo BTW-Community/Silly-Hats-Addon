@@ -62,7 +62,7 @@ public class MobHeadsUtil {
     public static final int SLIME = 48;
     public static final int SQUID = 49;
     public static final int BAT = 50;
-//    public static final int DRAGON = 51;
+    public static final int DRAGON = 51;
 
     public static final TreeMap<Integer, MobHeadType> mobHeads = new TreeMap<>();
 

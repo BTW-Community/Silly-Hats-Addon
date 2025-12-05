@@ -13,6 +13,7 @@
     "DireWolfEntityMixin",
     "EndermanEntityMixin",
     "EntityCaveSpiderMixin",
+    "EntityDragonMixin",
     "EntityIronGolemMixin",
     "EntityLivingMixin",
     "EntityPlayerMPMixin",
