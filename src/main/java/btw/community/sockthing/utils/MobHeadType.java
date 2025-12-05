@@ -62,16 +62,27 @@ public class MobHeadType {
     }
 
     public MobHeadType(int id, String name, String sound, float volume, float pitch){
-        this(id, name, sound);
-        this.volume = pitch;
-        this.pitch = volume;
+        this.id = id;
+        this.name = name;
+        this.sound = sound;
+        this.volume = volume;
+        this.pitch = pitch;
+        this.model = MobHeadTileEntityRenderer.BASE;
+        this.texture = "/shmodtex/heads/" + name + ".png";
+        this.glowingTexture = null;
+        this.blockBounds = getBlockBounds();
     }
 
     public MobHeadType(int id, String name, String sound, float volume, float pitch, MobHeadModel model){
-        this(id, name, sound);
-        this.volume = pitch;
-        this.pitch = volume;
+        this.id = id;
+        this.name = name;
+        this.sound = sound;
+        this.volume = volume;
+        this.pitch = pitch;
         this.model = model;
+        this.texture = "/shmodtex/heads/" + name + ".png";
+        this.glowingTexture = null;
+        this.blockBounds = getBlockBounds();
     }
 
     public MobHeadType(int id, String name, String sound, MobHeadModel model){

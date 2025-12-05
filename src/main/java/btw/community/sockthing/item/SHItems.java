@@ -63,7 +63,7 @@ public class SHItems {
 
         MobHeadsUtil.addNewMobHead( new MobHeadType(
                 MobHeadsUtil.CHICKEN_STARVING, "chickenStarving",
-                "mob.chicken.hurt", 0.7F, 0.7F));
+                "mob.chicken.hurt", 0.9F, 0.9F));
 
         MobHeadsUtil.addNewMobHead( new MobHeadType(
                 MobHeadsUtil.COW, "cow",
@@ -75,11 +75,11 @@ public class SHItems {
 
         MobHeadsUtil.addNewMobHead( new MobHeadType(
                 MobHeadsUtil.COW_STARVING, "cowStarving",
-                "mob.cow.hurt", 0.7F, 0.7F));
+                "mob.cow.hurt", 0.9F, 0.9F));
 
         MobHeadsUtil.addNewMobHead( new MobHeadType(
                 MobHeadsUtil.COW_HARNESS, "cowHarness",
-                "mob.cow.hurt", 0.5F, 0.9F,
+                "mob.cow.say", 0.8F, 0.9F,
                 MobHeadTileEntityRenderer.OVERLAY));
 
         MobHeadsUtil.addNewMobHead( new MobHeadType(
@@ -92,11 +92,11 @@ public class SHItems {
 
         MobHeadsUtil.addNewMobHead( new MobHeadType(
                 MobHeadsUtil.PIG_STARVING, "pigStarving",
-                "mob.pig.death", 0.7F, 0.7F));
+                "mob.pig.death", 0.9F, 0.9F));
 
         MobHeadsUtil.addNewMobHead( new MobHeadType(
                 MobHeadsUtil.PIG_HARNESS, "pigHarness",
-                "mob.pig.death", 0.5F, 0.9F,
+                "mob.pig.say", 0.8F, 0.9F,
                 MobHeadTileEntityRenderer.OVERLAY));
         
         MobHeadsUtil.addNewMobHead( new SheepHeadType(
@@ -111,12 +111,12 @@ public class SHItems {
 
         MobHeadsUtil.addNewMobHead( new SheepHeadType(
                 MobHeadsUtil.SHEEP_STARVING, "sheepStarving",
-                "mob.sheep.saz", 0.7F, 0.7F,
+                "mob.sheep.say", 0.8F, 0.8F,
                 MobHeadTileEntityRenderer.BASE, "/shmodtex/heads/sheepStarving.png", null));
 
         MobHeadsUtil.addNewMobHead( new MobHeadType(
                 MobHeadsUtil.SHEEP_HARNESS, "sheepHarness",
-                "mob.sheep.shear", 0.5F, 0.9F,
+                "mob.sheep.shear", 1.0F, 1.0F,
                 MobHeadTileEntityRenderer.OVERLAY));
         
         MobHeadsUtil.addNewMobHead( new MobHeadType(
@@ -129,11 +129,11 @@ public class SHItems {
 
         MobHeadsUtil.addNewMobHead( new MobHeadType(
                 MobHeadsUtil.MOOSHROOM_STARVING, "mooshroomStarving",
-                "mob.cow.hurt"));
+                "mob.cow.hurt", 0.9F, 0.9F));
 
         MobHeadsUtil.addNewMobHead( new MobHeadType(
                 MobHeadsUtil.MOOSHROOM_HARNESS, "mooshroomHarness",
-                "mob.cow.hurt", 0.5F, 0.9F,
+                "mob.cow.say", 0.8F, 0.9F,
                 MobHeadTileEntityRenderer.OVERLAY));
 
         MobHeadsUtil.addNewMobHead( new MobHeadType(
@@ -183,7 +183,7 @@ public class SHItems {
 
         MobHeadsUtil.addNewMobHead( new VillagerHeadType(
                 MobHeadsUtil.WITCH, "witch",
-                "mob.ghast.affectionate", 0.25F, 0.5F + random.nextFloat() * 0.25F,
+                "mob.witch.idle", 0.75F, 0.5F + random.nextFloat() * 0.25F,
                 MobHeadTileEntityRenderer.WITCH));
 
         MobHeadsUtil.addNewMobHead( new VillagerHeadType(
@@ -265,7 +265,7 @@ public class SHItems {
 
         MobHeadsUtil.addNewMobHead( new DragonHeadType(
                 MobHeadsUtil.DRAGON, "dragon",
-                "mob.dragon.say", 1.0F, 1.0F,
+                "mob.enderdragon.growl", 1.0F, 1.0F,
                 MobHeadTileEntityRenderer.DRAGON,
                 "/shmodtex/heads/dragon.png", "/shmodtex/heads/dragon_eyes.png"));
 

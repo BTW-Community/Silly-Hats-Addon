@@ -7,8 +7,8 @@ import net.minecraft.src.EntitySheep;
 import org.lwjgl.opengl.GL11;
 
 public class SheepHeadType extends MobHeadType{
-    public SheepHeadType(int id, String name, String sound, float pitch, float volume, MobHeadModel model, String texture, String overlayTexture) {
-        super(id, name, sound, pitch, volume, model, texture, overlayTexture);
+    public SheepHeadType(int id, String name, String sound, float volume, float pitch, MobHeadModel model, String texture, String overlayTexture) {
+        super(id, name, sound, volume, pitch, model, texture, overlayTexture);
     }
 
     @Override
