@@ -3,6 +3,7 @@ package btw.community.sockthing.mixins;
 import btw.community.sockthing.interfaces.DomesticSheepAccessor;
 import btw.community.sockthing.interfaces.PumpkinStatusAccessor;
 import btw.community.sockthing.item.SHItems;
+import btw.community.sockthing.utils.MobHeadsUtil;
 import btw.entity.mob.SheepEntity;
 import net.minecraft.src.*;
 import org.spongepowered.asm.mixin.Mixin;
@@ -20,19 +21,19 @@ public abstract class SheepEntityMixin extends EntitySheep implements DomesticSh
 
 //    @Inject(method = "dropFewItems", at = @At(value = "HEAD"))
     @Inject(method = "dropFewItems", at = @At(value = "HEAD"))
-    public void dropSquidHat(boolean killedByPlayer, int lootingModifier, CallbackInfo ci) {
-        if ( !this.worldObj.isRemote && getIsDomestic() == 1 )
+    public void dropSheepHead(boolean killedByPlayer, int lootingModifier, CallbackInfo ci) {
+        if ( !this.worldObj.isRemote  && getIsDomestic() == 1 )
         {
             int fleeceColor = this.getFleeceColor();
-            ItemStack mobHead = new ItemStack( SHItems.mobHead, 1, 16);
+            ItemStack mobHead = new ItemStack( SHItems.mobHead, 1, MobHeadsUtil.SHEEP);
 
             if (this.isFamished())
             {
-                mobHead = new ItemStack( SHItems.mobHead, 1, 17);
+                mobHead = new ItemStack( SHItems.mobHead, 1, MobHeadsUtil.SHEEP_FAMISHED);
             }
             else if (this.isStarving())
             {
-                mobHead = new ItemStack( SHItems.mobHead, 1, 18);
+                mobHead = new ItemStack( SHItems.mobHead, 1, MobHeadsUtil.SHEEP_STARVING);
             }
 
             NBTTagCompound newTag = new NBTTagCompound();

@@ -1,5 +1,6 @@
 package btw.community.sockthing.block.blocks;
 
+import btw.community.sockthing.utils.MobHeadType;
 import btw.community.sockthing.utils.MobHeadsUtil;
 import btw.community.sockthing.block.tileentity.MobHeadTileEntity;
 import btw.community.sockthing.item.SHItems;
@@ -57,57 +58,25 @@ public class MobHeadBlock extends BlockContainer
 
     private AxisAlignedBB GetBlockBoundsBasedOnState( IBlockAccess blockAccess, int x, int y, int z )
     {
-        AxisAlignedBB box = new AxisAlignedBB(0.25F, 0.0F, 0.25F, 0.75F, 0.5F, 0.75F);
+        MobHeadTileEntity tile = (MobHeadTileEntity) blockAccess.getBlockTileEntity(x, y, z);
+        if (tile == null) return null;
 
-        MobHeadTileEntity mobhead = (MobHeadTileEntity) blockAccess.getBlockTileEntity(x,y,z);
-        float extraHeadHeight = 0F;
+        int type = tile.getHeadType();
+        int direction = blockAccess.getBlockMetadata(x, y, z) & 7;
 
-        if (mobhead != null)
-        {
-            int type = mobhead.getHeadType();
-            if ( MobHeadsUtil.isVillagerType(type) )
-            {
-                extraHeadHeight = 2/16F;
-            }
-        }
+        MobHeadType mobhead = MobHeadsUtil.mobHeads.get(type);
+        AxisAlignedBB bounds = mobhead.getBlockBounds();
 
-        int metaDir = blockAccess.getBlockMetadata(x, y, z) & 7;
+        float[] offsets = MobHeadsUtil.computeOffsets(bounds, direction);
 
-        if (metaDir == 1)
-        {
-            box = new AxisAlignedBB(0.25F, 0.0F, 0.25F, 0.75F, 0.5F + extraHeadHeight, 0.75F);
-        }
-        else
-        {
-            int var5 = blockAccess.getBlockMetadata(x, y, z) & 7;
-
-
-            switch (var5)
-            {
-                case 1:
-                default:
-                    box = new AxisAlignedBB(0.25F, 0.0F, 0.25F, 0.75F, 0.5F + extraHeadHeight, 0.75F);
-                    break;
-
-                case 2:
-                    box = new AxisAlignedBB(0.25F, 0.25F, 0.5F, 0.75F, 0.75F + extraHeadHeight, 1.0F);
-                    break;
-
-                case 3:
-                    box = new AxisAlignedBB(0.25F, 0.25F, 0.0F, 0.75F, 0.75F + extraHeadHeight, 0.5F);
-                    break;
-
-                case 4:
-                    box = new AxisAlignedBB(0.5F, 0.25F, 0.25F, 1.0F, 0.75F + extraHeadHeight, 0.75F);
-                    break;
-
-                case 5:
-                    box = new AxisAlignedBB(0.0F, 0.25F, 0.25F, 0.5F, 0.75F + extraHeadHeight, 0.75F);
-                    break;
-            }
-
-        }
-        return box;
+        return AxisAlignedBB.getBoundingBox(
+                bounds.minX + offsets[0],
+                bounds.minY + offsets[1],
+                bounds.minZ + offsets[2],
+                bounds.maxX + offsets[0],
+                bounds.maxY + offsets[1],
+                bounds.maxZ + offsets[2]
+        );
     }
 
     /**
@@ -264,7 +233,7 @@ public class MobHeadBlock extends BlockContainer
      */
     public String getItemIconName()
     {
-        return MobHeadItem.headTypes[0];
+        return null;
     }
 
     // --- Copied from FCBlockSkull --- //

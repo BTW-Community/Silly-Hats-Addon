@@ -1,12 +1,14 @@
 package btw.community.sockthing.block.blocks;
 
 import btw.block.blocks.SkullBlock;
+import btw.community.sockthing.block.models.VillagerHeadModel;
 import btw.community.sockthing.block.tileentity.HatTileEntity;
 import btw.community.sockthing.block.tileentity.MobHeadTileEntity;
 import btw.community.sockthing.item.SHItems;
 import btw.community.sockthing.item.items.HatItem;
 import btw.community.sockthing.utils.HatsUtil;
 import btw.community.sockthing.utils.MobHeadsUtil;
+import btw.community.sockthing.utils.VillagerHeadType;
 import net.minecraft.src.*;
 
 import java.util.Random;
@@ -84,7 +86,7 @@ public class HatBlock extends BlockContainer {
                 if (teBelow instanceof MobHeadTileEntity)
                 {
                     MobHeadTileEntity head = (MobHeadTileEntity) teBelow;
-                    if (MobHeadsUtil.isVillagerType(head.getHeadType()))
+                    if (MobHeadsUtil.mobHeads.get(head.getHeadType()).getModel() instanceof VillagerHeadModel)
                     {
                         switch ( headFacing )
                         {

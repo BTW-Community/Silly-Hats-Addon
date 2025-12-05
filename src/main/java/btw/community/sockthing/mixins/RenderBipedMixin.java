@@ -3,6 +3,8 @@ package btw.community.sockthing.mixins;
 import btw.community.sockthing.block.tileentity.HatTileEntityRenderer;
 import btw.community.sockthing.block.tileentity.MobHeadTileEntityRenderer;
 import btw.community.sockthing.item.SHItems;
+import btw.community.sockthing.utils.MobHeadsUtil;
+import btw.community.sockthing.utils.SheepHeadType;
 import net.minecraft.src.*;
 import org.lwjgl.opengl.GL11;
 import org.spongepowered.asm.mixin.Mixin;
@@ -45,9 +47,8 @@ public class RenderBipedMixin {
                 GL11.glScalef(scale, -scale, -scale);
 
                 int fleeceColor = 0;
-                boolean isSheepHead = armorItemInSlot.getItemDamage() == 16 || armorItemInSlot.getItemDamage() == 17 || armorItemInSlot.getItemDamage() == 18;
 
-                if (isSheepHead && armorItemInSlot.hasTagCompound())
+                if (MobHeadsUtil.mobHeads.get(armorItemInSlot.getItemDamage()) instanceof SheepHeadType && armorItemInSlot.hasTagCompound())
                 {
                     if (armorItemInSlot.getTagCompound().hasKey("fleeceColor"))
                     {

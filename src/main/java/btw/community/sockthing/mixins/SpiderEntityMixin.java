@@ -2,6 +2,7 @@ package btw.community.sockthing.mixins;
 
 import btw.community.sockthing.item.SHItems;
 import btw.community.sockthing.utils.MobHeadsUtil;
+import btw.entity.mob.CaveSpiderEntity;
 import btw.entity.mob.EndermanEntity;
 import btw.entity.mob.JungleSpiderEntity;
 import btw.entity.mob.SpiderEntity;
@@ -16,6 +17,17 @@ public abstract class SpiderEntityMixin extends EntitySpider {
 
     @Override
     protected void dropHead() {
-        entityDropItem( new ItemStack(SHItems.mobHead.itemID, 1, MobHeadsUtil.SPIDER), 0F );
+        SpiderEntity thisSpider = (SpiderEntity)(Object)this;
+
+        if (thisSpider instanceof CaveSpiderEntity){
+            entityDropItem( new ItemStack(SHItems.mobHead.itemID, 1, MobHeadsUtil.SPIDER_CAVE), 0F );
+        }
+        else if (thisSpider instanceof JungleSpiderEntity){
+            entityDropItem( new ItemStack(SHItems.mobHead.itemID, 1, MobHeadsUtil.SPIDER_JUNGLE), 0F );
+        }
+        else {
+            entityDropItem( new ItemStack(SHItems.mobHead.itemID, 1, MobHeadsUtil.SPIDER), 0F );
+        }
+
     }
 }

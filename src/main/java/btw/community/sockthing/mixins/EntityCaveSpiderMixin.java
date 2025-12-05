@@ -16,8 +16,5 @@ public abstract class EntityCaveSpiderMixin extends EntitySpider {
         super(world);
     }
 
-    @Override
-    protected void dropHead() {
-        entityDropItem( new ItemStack(SHItems.mobHead.itemID, 1, MobHeadsUtil.SPIDER_CAVE), 0F );
-    }
+    //head dropped in Spider Entity
 }

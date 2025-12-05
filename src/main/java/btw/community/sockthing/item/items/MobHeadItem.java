@@ -1,8 +1,10 @@
 package btw.community.sockthing.item.items;
 
 import btw.community.sockthing.block.SHBlocks;
+import btw.community.sockthing.utils.MobHeadType;
 import btw.community.sockthing.utils.MobHeadsUtil;
 import btw.community.sockthing.block.tileentity.MobHeadTileEntity;
+import btw.community.sockthing.utils.SheepHeadType;
 import btw.world.util.WorldUtils;
 import com.prupe.mcpatcher.cit.CITUtils;
 import net.fabricmc.api.EnvType;
@@ -10,40 +12,21 @@ import net.fabricmc.api.Environment;
 import net.minecraft.src.*;
 
 import java.util.List;
+import java.util.Map;
 
 public class MobHeadItem extends Item {
-
-
-    public static final String[] headTypes = new String[] {
-            "ocelot",
-            "catBlack", "catOrange", "catWhite", "catTabby",
-            "chicken", "chickenFamished", "chickenStarving",
-            "cow", "cowFamished", "cowStarving", "cowHarness",
-            "pig", "pigFamished", "pigStarving", "pigHarness",
-            "sheep", "sheepFamished", "sheepStarving", "sheepHarness",
-            "mooshroom", "mooshroomFamished", "mooshroomStarving", "mooshroomHarness",
-            "dog", "wolf", "wolfAngry", "wolfHungry", "wolfDire",
-            "villager", "villagerDirty", "villagerLibrarian", "villagerPriest", "villagerButcher",
-            "witch", "villagerZombie",
-            "golem", "snowman",
-            "creeperNeutered",
-            "spider", "spiderCave", "spiderJungle",
-            "enderman",
-            "blaze",
-            "ghast", "ghastScreaming",
-            "magmacube",
-            "pigman",
-            "slime",
-            "squid",
-            "bat"
-    };
-    private Block block;
+     private Block block;
     public MobHeadItem(int itemID, Block blockID) {
         super(itemID);
         this.setCreativeTab(CreativeTabs.tabDecorations);
         this.setMaxDamage(0);
         this.setHasSubtypes(true);
         this.block = blockID;
+
+        setBuoyant();
+        setIncineratedInCrucible();
+        setFilterableProperties(Item.FILTERABLE_SOLID_BLOCK);
+        setUnlocalizedName( "SHItemMobHead" );
     }
 
     /**
@@ -146,9 +129,8 @@ public class MobHeadItem extends Item {
      */
     public void getSubItems(int id, CreativeTabs creativeTabs, List list)
     {
-        for (int var4 = 0; var4 < headTypes.length; ++var4)
-        {
-            list.add(new ItemStack(id, 1, var4));
+        for (MobHeadType mobHead : MobHeadsUtil.mobHeads.values()){
+            list.add(new ItemStack(id, 1, mobHead.getId()));
         }
     }
 
@@ -157,10 +139,10 @@ public class MobHeadItem extends Item {
      */
     public Icon getIconFromDamage(int itemDamage)
     {
-        if (itemDamage < 0 || itemDamage >= headTypes.length)
-        {
-            itemDamage = 0;
-        }
+//        if (itemDamage < 0 || itemDamage >= MobHeadsUtil.mobHeads.size())
+//        {
+//            itemDamage = 0;
+//        }
 
         return this.icons[itemDamage];
     }
@@ -181,22 +163,25 @@ public class MobHeadItem extends Item {
     {
         int type = itemStack.getItemDamage();
 
-        if (type < 0 || type >= headTypes.length)
-        {
-            type = 0;
-        }
+//        if (type < 0 || type >= MobHeadsUtil.mobHeads.size())
+//        {
+//            type = 0;
+//        }
 
-        if (MobHeadsUtil.isSheepType(type) && itemStack.hasTagCompound())
+        if (MobHeadsUtil.mobHeads.get(type) instanceof SheepHeadType && itemStack.hasTagCompound())
         {
             if (itemStack.getTagCompound().hasKey("fleeceColor"))
             {
                 int fleeceColor = itemStack.getTagCompound().getInteger("fleeceColor");
 
-                return super.getUnlocalizedName() + "." + headTypes[type] + "_" + fleeceColor;
+                return getUnlocalizedName() + "." + MobHeadsUtil.mobHeads.get(type).getName() + "_" + fleeceColor;
             }
         }
 
-        return super.getUnlocalizedName() + "." + headTypes[type];
+        if (MobHeadsUtil.mobHeads.get(type) == null){
+           return getUnlocalizedName() + "." + "unknown";
+        }
+        else return getUnlocalizedName() + "." + MobHeadsUtil.mobHeads.get(type).getName();
     }
 
     public String getItemDisplayName(ItemStack stack)
@@ -211,14 +196,13 @@ public class MobHeadItem extends Item {
 
     public void registerIcons(IconRegister register)
     {
-        this.icons = new Icon[headTypes.length];
+        this.icons = new Icon[256];
         this.sheepIcons = new Icon[16];
         this.sheepFamishedIcons = new Icon[16];
         this.sheepStarvingIcons = new Icon[16];
 
-        for (int i = 0; i < headTypes.length; ++i)
-        {
-            this.icons[i] = register.registerIcon("SHItemMobHead_" + headTypes[i]);
+        for (MobHeadType mobHead : MobHeadsUtil.mobHeads.values()){
+            this.icons[mobHead.getId()] = register.registerIcon("SHItemMobHead_" + mobHead.getName());
         }
 
         for (int j = 0; j < sheepIcons.length; ++j)
@@ -240,7 +224,7 @@ public class MobHeadItem extends Item {
     @Environment(EnvType.CLIENT)
     public Icon getIconIndex(ItemStack itemStack)
     {
-        if (MobHeadsUtil.isSheepType(itemStack.getItemDamage()) && itemStack.hasTagCompound())
+        if (MobHeadsUtil.mobHeads.get(itemStack.getItemDamage()) instanceof SheepHeadType && itemStack.hasTagCompound())
         {
             if (itemStack.getTagCompound().hasKey("fleeceColor"))
             {

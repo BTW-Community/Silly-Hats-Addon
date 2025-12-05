@@ -1,5 +1,15 @@
 package btw.community.sockthing.utils;
 
+import btw.community.sockthing.item.items.MobHeadItem;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
+import net.minecraft.src.AxisAlignedBB;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
+
 public class MobHeadsUtil {
     public static final int OCELOT = 0;
     public static final int CAT_BLACK = 1;
@@ -52,22 +62,57 @@ public class MobHeadsUtil {
     public static final int SLIME = 48;
     public static final int SQUID = 49;
     public static final int BAT = 50;
+//    public static final int DRAGON = 51;
 
-    public static boolean isVillagerType(int type) {
-        return type == VILLAGER
-                || type == VILLAGER_DIRTY || type == VILLAGER_LIBRARIAN
-                || type == VILLAGER_PRIEST || type == VILLAGER_BUTCHER
-                || type == WITCH || type == VILLAGER_ZOMBIE || type == GOLEM;
-    }
+    public static final TreeMap<Integer, MobHeadType> mobHeads = new TreeMap<>();
 
-    public static boolean isSpiderType(int type) {
-        return type == SPIDER || type == SPIDER_CAVE || type == SPIDER_JUNGLE;
+
+    public static void addNewMobHead(MobHeadType mobHead) {
+        mobHeads.put(mobHead.getId(), mobHead);
     }
 
     /**
-     * Sheep, but not harness
+     * Returns offsetX, offsetY, offsetZ, rotation depending on bounds of head
      */
-    public static boolean isSheepType(int type) {
-        return type == SHEEP || type == SHEEP_FAMISHED || type == SHEEP_STARVING;
+    @Environment(value = EnvType.CLIENT)
+    public static float[] computeOffsets(AxisAlignedBB bounds, int direction) {
+        float height = (float) (bounds.maxY - bounds.minY);
+        float width  = (float) Math.max(bounds.maxX - bounds.minX, bounds.maxZ - bounds.minZ);
+
+        float yShift = 0F;
+        if (direction > 1) {
+            yShift = (1F - height) / 2F;
+        }
+
+        float gap = 1F - width;
+
+        float x = 0F, y = yShift, z = 0F;
+        float rotation = 0F;
+
+        switch (direction) {
+            case 2:
+                z =  gap / 2F;
+                break;
+            case 3:
+                z = -gap / 2F;
+                rotation = 180F;
+                break;
+            case 4:
+                x =  gap / 2F;
+                rotation = 270F;
+                break;
+            case 5:
+                x = -gap / 2F;
+                rotation =  90F;
+                break;
+            default:
+                // directions 0 and 1 (and any other unexpected values) produce no x/z offset and no rotation,
+                // and y remains 0 when direction <= 1.
+                break;
+        }
+
+        return new float[]{ x, y, z, rotation };
     }
+
+
 }
