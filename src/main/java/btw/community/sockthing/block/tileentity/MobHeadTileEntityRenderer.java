@@ -3,6 +3,7 @@ package btw.community.sockthing.block.tileentity;
 import btw.community.sockthing.block.models.DragonHeadModel;
 import btw.community.sockthing.block.models.MobHeadModel;
 import btw.community.sockthing.block.models.VillagerHeadModel;
+import btw.community.sockthing.utils.CreeperHeadType;
 import btw.community.sockthing.utils.MobHeadType;
 import btw.community.sockthing.utils.MobHeadsUtil;
 import net.fabricmc.api.EnvType;
@@ -30,7 +31,7 @@ public class MobHeadTileEntityRenderer extends TileEntitySpecialRenderer
      */
     public void renderTileEntityMobHeadAt(MobHeadTileEntity par1TileEntitySkull, double par2, double par4, double par6, float par8)
     {
-        this.renderMobHead((float)par2, (float)par4, (float)par6, par1TileEntitySkull.getBlockMetadata() & 7, (float)(par1TileEntitySkull.getHeadRotation() * 360) / 16.0F, par1TileEntitySkull.getHeadType(), par1TileEntitySkull.getFleeceColor());
+        this.renderMobHead(par1TileEntitySkull.ticksExisted, (float)par2, (float)par4, (float)par6, par1TileEntitySkull.getBlockMetadata() & 7, (float)(par1TileEntitySkull.getHeadRotation() * 360) / 16.0F, par1TileEntitySkull.getHeadType(), par1TileEntitySkull.getFleeceColor());
     }
 
     /**
@@ -42,7 +43,7 @@ public class MobHeadTileEntityRenderer extends TileEntitySpecialRenderer
         headRenderer = this;
     }
 
-    public void renderMobHead(float par1, float par2, float par3, int meta, float rot, int type, int fleeceColor)
+    public void renderMobHead(float partialTicks, float par1, float par2, float par3, int meta, float rot, int type, int fleeceColor)
     {
         MobHeadType mobHead = MobHeadsUtil.mobHeads.get(type);
         MobHeadModel model = MOB;
@@ -73,54 +74,20 @@ public class MobHeadTileEntityRenderer extends TileEntitySpecialRenderer
         model.render((Entity)null, 0.0F, 0.0F, 0.0F, rot, 0.0F, var10);
 
         if (mobHead != null){
-            if (mobHead.getGlowingTexture() != null) renderGlowingEyes( model, rot, mobHead.getGlowingTexture());
-        }
-
-        if (mobHead != null){
             mobHead.postRender(par1, par2, par3, meta, rot, type, fleeceColor, var10);
         }
 
+        if (mobHead != null){
+            if (mobHead.getGlowingTexture() != null) {
+                if (MobHeadsUtil.mobHeads.get(mobHead.getId()) instanceof CreeperHeadType){
+                    renderCreeperGlow( model, partialTicks, rot, mobHead.getGlowingTexture());
+                }
+                else renderGlowingEyes( model, rot, mobHead.getGlowingTexture());
+            }
+        }
+
+
         GL11.glPopMatrix();
-    }
-
-    private void renderCreeperGlow(MobHeadModel model, float fYaw) {
-
-        bindTextureByName("/armor/power.png");
-        //GL11.glMatrixMode(GL11.GL_TEXTURE);
-        float var4 = 0.5F;
-        GL11.glEnable(GL11.GL_BLEND);
-        GL11.glDisable(GL11.GL_ALPHA_TEST);
-        //GL11.glBlendFunc(GL11.GL_ONE, GL11.GL_ONE);
-        GL11.glDisable(GL11.GL_LIGHTING);
-        GL11.glDepthMask(true);
-        char var5 = 61680;
-        int var6 = var5 % 65536;
-        int var7 = var5 / 65536;
-        OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float)var6 / 1.0F, (float)var7 / 1.0F);
-        //GL11.glMatrixMode(GL11.GL_MODELVIEW);
-        //GL11.glEnable(GL11.GL_BLEND);
-        float var8 = 0.5F;
-        GL11.glColor4f(var8, var8, var8, 1.0F);
-        //GL11.glDisable(GL11.GL_LIGHTING);
-        GL11.glBlendFunc(GL11.GL_ONE, GL11.GL_ONE);
-        GL11.glEnable(GL11.GL_LIGHTING);
-
-//    	float var4 = 0F;
-//        this.bindTextureByName("/armor/power.png");
-//        GL11.glMatrixMode(GL11.GL_TEXTURE);
-//        GL11.glLoadIdentity();
-//        float var5 = var4 * 0.01F;
-//        float var6 = var4 * 0.01F;
-//        GL11.glTranslatef(var5, var6, 0.0F);
-//        model = mobOverlay;
-//        GL11.glMatrixMode(GL11.GL_MODELVIEW);
-//        GL11.glEnable(GL11.GL_BLEND);
-//        float var7 = 0.5F;
-//        GL11.glColor4f(var7, var7, var7, 1.0F);
-//        GL11.glDisable(GL11.GL_LIGHTING);
-//        GL11.glBlendFunc(GL11.GL_ONE, GL11.GL_ONE);
-
-        model.render((Entity)null, 0.0F, 0.0F, 0.0F, fYaw, 0.0F, 0.0625F);
     }
 
     public void renderTileEntityAt(TileEntity te, double x, double y, double z, float par8)
@@ -133,8 +100,9 @@ public class MobHeadTileEntityRenderer extends TileEntitySpecialRenderer
         this.bindTextureByName(texture);
         float var4 = 1.0F;
         GL11.glEnable(GL11.GL_BLEND);
-        GL11.glDisable(GL11.GL_ALPHA_TEST);
-        GL11.glBlendFunc(GL11.GL_ONE, GL11.GL_ONE);
+        GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+        GL11.glEnable(GL11.GL_ALPHA_TEST);
+        GL11.glAlphaFunc(GL11.GL_GREATER, 0.1F);
         GL11.glDisable(GL11.GL_LIGHTING);
         GL11.glDepthMask(true);
         char var5 = 61680;
@@ -142,15 +110,61 @@ public class MobHeadTileEntityRenderer extends TileEntitySpecialRenderer
         int var7 = var5 / 65536;
         OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float)var6 / 1.0F, (float)var7 / 1.0F);
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        GL11.glEnable(GL11.GL_LIGHTING);
-        GL11.glEnable(GL11.GL_ALPHA_TEST);
-        GL11.glDisable(GL11.GL_BLEND);
+//        GL11.glEnable(GL11.GL_LIGHTING);
+//        GL11.glEnable(GL11.GL_ALPHA_TEST);
+//        GL11.glDisable(GL11.GL_BLEND);
         GL11.glColor4f(1.0F, 1.0F, 1.0F, var4);
 
-        GL11.glScalef(1.0001F, 1.0001F, 1.0001F);
+        GL11.glScalef(1.001F, 1.001F, 1.001F);
 
         model.render((Entity)null, 0.0F, 0.0F, 0.0F, fYaw, 0.0F, 0.0625F);
+
+        GL11.glEnable(GL11.GL_ALPHA_TEST);
+        GL11.glEnable(GL11.GL_LIGHTING);
+        GL11.glDisable(GL11.GL_BLEND);
     }
+
+    public void renderCreeperGlow(MobHeadModel model, float partialTicks, float fYaw, String texture)
+    {
+        this.bindTextureByName(texture);
+        float alpha = 1.0F;
+
+        GL11.glEnable(GL11.GL_BLEND);
+        GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+
+        GL11.glEnable(GL11.GL_ALPHA_TEST);
+        GL11.glAlphaFunc(GL11.GL_GREATER, 0.1F);
+
+        // Disable world lighting to avoid darkening
+        GL11.glDisable(GL11.GL_LIGHTING);
+
+        // Fullbright lightmap coords override
+        char light = 61680;
+        int lx = light % 65536;
+        int ly = light / 65536;
+        OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, lx, ly);
+
+        float time = partialTicks;
+
+        GL11.glMatrixMode(GL11.GL_TEXTURE);
+        GL11.glLoadIdentity();
+
+        float scroll = time * 0.01F;      // speed, same as creeper
+        GL11.glTranslatef(scroll, scroll, 0F);
+
+        GL11.glMatrixMode(GL11.GL_MODELVIEW);
+
+        GL11.glScalef(1.001F, 1.001F, 1.001F);
+        model.render((Entity)null, 0F, 0F, 0F, fYaw, 0F, 0.0625F);
+
+        GL11.glMatrixMode(GL11.GL_TEXTURE);
+        GL11.glLoadIdentity();
+        GL11.glMatrixMode(GL11.GL_MODELVIEW);
+
+        GL11.glEnable(GL11.GL_LIGHTING);
+        GL11.glDisable(GL11.GL_BLEND);
+    }
+
 
     // FCMOD: Added
     private void RenderInfusedEyes( MobHeadModel model, float fYaw )

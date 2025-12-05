@@ -29,4 +29,12 @@ public abstract class CreeperEntityMixin extends EntityCreeper {
         ci.cancel();
     }
 
+    @Inject(method = "dropFewItems", at = @At(value = "TAIL"), cancellable = true)
+    public void dropHead(boolean par1, int par2, CallbackInfo ci) {
+        if (this.getPowered()) {
+            this.entityDropItem( new ItemStack( SHItems.mobHead.itemID, 1, MobHeadsUtil.CREEPER_SPECIAL), 0F );
+
+        }
+    }
+
 }

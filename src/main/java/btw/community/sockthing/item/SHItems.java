@@ -183,7 +183,7 @@ public class SHItems {
 
         MobHeadsUtil.addNewMobHead( new VillagerHeadType(
                 MobHeadsUtil.WITCH, "witch",
-                "mob.witch.idle", 0.75F, 0.5F + random.nextFloat() * 0.25F,
+                "mob.witch.idle", 0.75F, 0.75F,
                 MobHeadTileEntityRenderer.WITCH));
 
         MobHeadsUtil.addNewMobHead( new VillagerHeadType(
@@ -277,6 +277,12 @@ public class SHItems {
                 MobHeadsUtil.WITHER_SPECIAL, "witherSpecial",
                 "mob.wither.hurt",
                 MobHeadTileEntityRenderer.BASE, "witherSpecialEyes"));
+
+        MobHeadsUtil.addNewMobHead( new CreeperHeadType(
+                MobHeadsUtil.CREEPER_SPECIAL, "creeperSpecial",
+                "random.explode", 4.0F, (1.0F + (random.nextFloat() - random.nextFloat()) * 0.2F) * 0.7F,
+                MobHeadTileEntityRenderer.MOB,
+                "/mob/creeper.png", "/armor/power.png"));
 
     }
 }

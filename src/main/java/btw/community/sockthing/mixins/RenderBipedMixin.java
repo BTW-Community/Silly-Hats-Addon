@@ -59,7 +59,7 @@ public class RenderBipedMixin {
                     }
                 }
 
-                MobHeadTileEntityRenderer.headRenderer.renderMobHead(-0.5F, 0.0F, -0.5F, 1, 180.0F, armorItemInSlot.getItemDamage(), fleeceColor);
+                MobHeadTileEntityRenderer.headRenderer.renderMobHead(par1EntityLiving.ticksExisted, -0.5F, 0.0F, -0.5F, 1, 180.0F, armorItemInSlot.getItemDamage(), fleeceColor);
             }
         }
 

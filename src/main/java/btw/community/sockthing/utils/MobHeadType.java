@@ -31,8 +31,8 @@ public class MobHeadType {
         this.volume = volume;
         this.pitch = pitch;
         this.model = model;
-        this.texture = texture;
-        this.glowingTexture = glowingTexture;
+        this.texture = setupTexture(texture);
+        this.glowingTexture = setupTexture(glowingTexture);
         this.blockBounds = getBlockBounds();
     }
 
@@ -44,7 +44,7 @@ public class MobHeadType {
         this.volume = volume;
         this.pitch = pitch;
         this.model = model;
-        this.texture = texture;
+        this.texture = setupTexture(texture);
         this.glowingTexture = null;
         this.blockBounds = getBlockBounds();
     }
@@ -56,7 +56,7 @@ public class MobHeadType {
         this.volume = 1F;
         this.pitch = 1F;
         this.model = MobHeadTileEntityRenderer.BASE;
-        this.texture = "/shmodtex/heads/" + name + ".png";
+        this.texture = setupTexture(name);
         this.glowingTexture = null;
         this.blockBounds = getBlockBounds();
     }
@@ -68,7 +68,7 @@ public class MobHeadType {
         this.volume = volume;
         this.pitch = pitch;
         this.model = MobHeadTileEntityRenderer.BASE;
-        this.texture = "/shmodtex/heads/" + name + ".png";
+        this.texture = setupTexture(name);
         this.glowingTexture = null;
         this.blockBounds = getBlockBounds();
     }
@@ -80,7 +80,7 @@ public class MobHeadType {
         this.volume = volume;
         this.pitch = pitch;
         this.model = model;
-        this.texture = "/shmodtex/heads/" + name + ".png";
+        this.texture = setupTexture(name);
         this.glowingTexture = null;
         this.blockBounds = getBlockBounds();
     }
@@ -92,7 +92,7 @@ public class MobHeadType {
         this.volume = 1F;
         this.pitch = 1F;
         this.model = model;
-        this.texture = "/shmodtex/heads/" + name + ".png";
+        this.texture = setupTexture(name);
         this.glowingTexture = null;
         this.blockBounds = getBlockBounds();
     }
@@ -104,13 +104,20 @@ public class MobHeadType {
         this.volume = 1F;
         this.pitch = 1F;
         this.model = model;
-        this.texture = "/shmodtex/heads/" + name + ".png";
-        if (glowingTexture.startsWith("/")) {
-            this.glowingTexture = glowingTexture;
-        }
-        else this.glowingTexture = "/shmodtex/heads/" + glowingTexture + ".png";
+        this.texture = setupTexture(name);
+        this.glowingTexture = setupTexture(glowingTexture);
         this.blockBounds = getBlockBounds();
     }
+
+    protected String setupTexture(String texture) {
+        if (texture == null) return null;
+
+        if (texture.startsWith("/")) {
+            return texture;
+        }
+        else return "/shmodtex/heads/" + texture + ".png";
+    }
+
 
     public int getId() {
         return id;

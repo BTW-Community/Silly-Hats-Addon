@@ -1,6 +1,7 @@
 package btw.community.sockthing.block.tileentity;
 
 import btw.block.tileentity.TileEntityDataPacketHandler;
+import btw.community.sockthing.utils.MobHeadsUtil;
 import net.minecraft.src.NBTTagCompound;
 import net.minecraft.src.Packet;
 import net.minecraft.src.Packet132TileEntityData;
@@ -8,6 +9,8 @@ import net.minecraft.src.TileEntity;
 
 public class MobHeadTileEntity extends TileEntity implements TileEntityDataPacketHandler
 {
+    public float ticksExisted;
+
     /** Entity type for this skull. */
     private int headType;
 
@@ -15,6 +18,13 @@ public class MobHeadTileEntity extends TileEntity implements TileEntityDataPacke
     private int headRotation;
     private int fleeceColor;
 
+
+    @Override
+    public void updateEntity() {
+        if (this.getHeadType() == MobHeadsUtil.CREEPER_SPECIAL) {
+            ticksExisted++;
+        }
+    }
 
     /**
      * Writes a tile entity to NBT.
@@ -26,6 +36,7 @@ public class MobHeadTileEntity extends TileEntity implements TileEntityDataPacke
         tag.setByte("SHHeadType", (byte)(this.headType & 255));
         tag.setByte("SHHeadRot", (byte)(this.headRotation & 255));
         tag.setInteger("SHHeadFleeceColor", this.fleeceColor);
+        tag.setFloat("SHHeadTicksExisted", this.ticksExisted);
     }
 
     /**
@@ -47,6 +58,10 @@ public class MobHeadTileEntity extends TileEntity implements TileEntityDataPacke
         {
             this.fleeceColor = tag.getInteger("SHHeadFleeceColor");
         }
+        if (tag.hasKey("SHHeadTicksExisted"))
+        {
+            this.ticksExisted = tag.getFloat("SHHeadTicksExisted");
+        }
     }
 
     /**
@@ -58,6 +73,7 @@ public class MobHeadTileEntity extends TileEntity implements TileEntityDataPacke
         tag.setByte("SHHeadType", (byte)(this.headType & 255));
         tag.setByte("SHHeadRot", (byte)(this.headRotation & 255));
         tag.setInteger("SHHeadFleeceColor", this.fleeceColor);
+        tag.setFloat("SHHeadTicksExisted", this.ticksExisted);
         return new Packet132TileEntityData(this.xCoord, this.yCoord, this.zCoord, 1, tag);
     }
 
@@ -77,6 +93,10 @@ public class MobHeadTileEntity extends TileEntity implements TileEntityDataPacke
         if (tag.hasKey("SHHeadFleeceColor"))
         {
             this.fleeceColor = tag.getInteger("SHHeadFleeceColor");
+        }
+        if (tag.hasKey("SHHeadTicksExisted"))
+        {
+            this.ticksExisted = tag.getFloat("SHHeadTicksExisted");
         }
     }
 
