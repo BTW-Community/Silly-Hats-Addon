@@ -269,5 +269,14 @@ public class SHItems {
                 MobHeadTileEntityRenderer.DRAGON,
                 "/shmodtex/heads/dragon.png", "/shmodtex/heads/dragon_eyes.png"));
 
+        MobHeadsUtil.addNewMobHead( new MobHeadType(
+                MobHeadsUtil.WITHER, "wither",
+                "mob.wither.idle"));
+
+        MobHeadsUtil.addNewMobHead( new MobHeadType(
+                MobHeadsUtil.WITHER_SPECIAL, "witherSpecial",
+                "mob.wither.hurt",
+                MobHeadTileEntityRenderer.BASE, "witherSpecialEyes"));
+
     }
 }

@@ -17,6 +17,7 @@
     "EntityIronGolemMixin",
     "EntityLivingMixin",
     "EntityPlayerMPMixin",
+    "EntityWitherMixin",
     "GhastEntityMixin",
     "ItemSkullMixin",
     "JungleSpiderEntityMixin",
