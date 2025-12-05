@@ -195,7 +195,7 @@ public class MobHeadItem extends Item {
 
     public void registerIcons(IconRegister register)
     {
-        this.icons = new Icon[256];
+        this.icons = new Icon[1024];
         this.sheepIcons = new Icon[16];
         this.sheepFamishedIcons = new Icon[16];
         this.sheepStarvingIcons = new Icon[16];
