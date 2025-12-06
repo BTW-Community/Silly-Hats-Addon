@@ -6,3 +6,6 @@
 - Added the ability for mobs that can pick up loot to wear hats & mob heads
 - Changed the drop rate of Witch Hats and Squid Hats from 1/10 to 1/25
 - Added the ability to play mob sounds by placing a mob head on a note block and triggering the latter
+- Added Dragon Head
+- Added Wither Head
+- Added Charged Creeper Head
