@@ -2,7 +2,7 @@ package btw.community.sockthing.block.blocks;
 
 import btw.community.sockthing.block.tileentity.MobHeadTileEntity;
 import btw.community.sockthing.item.SHItems;
-import btw.community.sockthing.utils.MobHeadType;
+import btw.community.sockthing.utils.heads.MobHeadType;
 import btw.community.sockthing.utils.MobHeadsUtil;
 import net.minecraft.src.*;
 

@@ -1,5 +1,6 @@
 package btw.community.sockthing.utils;
 
+import btw.community.sockthing.utils.heads.MobHeadType;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.src.AxisAlignedBB;

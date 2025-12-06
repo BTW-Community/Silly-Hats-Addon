@@ -4,7 +4,7 @@ import btw.community.sockthing.block.tileentity.HatTileEntityRenderer;
 import btw.community.sockthing.block.tileentity.MobHeadTileEntityRenderer;
 import btw.community.sockthing.item.SHItems;
 import btw.community.sockthing.utils.MobHeadsUtil;
-import btw.community.sockthing.utils.SheepHeadType;
+import btw.community.sockthing.utils.heads.SheepHeadType;
 import net.minecraft.src.*;
 import org.lwjgl.opengl.GL11;
 import org.spongepowered.asm.mixin.Mixin;

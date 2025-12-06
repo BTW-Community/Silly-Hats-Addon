@@ -2,9 +2,9 @@ package btw.community.sockthing.item.items;
 
 import btw.community.sockthing.block.SHBlocks;
 import btw.community.sockthing.block.tileentity.MobHeadTileEntity;
-import btw.community.sockthing.utils.MobHeadType;
+import btw.community.sockthing.utils.heads.MobHeadType;
 import btw.community.sockthing.utils.MobHeadsUtil;
-import btw.community.sockthing.utils.SheepHeadType;
+import btw.community.sockthing.utils.heads.SheepHeadType;
 import btw.world.util.WorldUtils;
 import com.prupe.mcpatcher.cit.CITUtils;
 import net.fabricmc.api.EnvType;

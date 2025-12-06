@@ -5,6 +5,7 @@ import btw.community.sockthing.block.tileentity.MobHeadTileEntityRenderer;
 import btw.community.sockthing.item.items.HatItem;
 import btw.community.sockthing.item.items.MobHeadItem;
 import btw.community.sockthing.utils.*;
+import btw.community.sockthing.utils.heads.*;
 import net.minecraft.src.Item;
 
 import java.util.Random;

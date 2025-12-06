@@ -1,7 +1,7 @@
-package btw.community.sockthing.utils;
+package btw.community.sockthing.utils.heads;
 
 import btw.community.sockthing.block.models.MobHeadModel;
-import btw.community.sockthing.block.models.SilverfishHeadModel;
+import btw.community.sockthing.utils.MobHeadsUtil;
 import net.minecraft.src.AxisAlignedBB;
 import org.lwjgl.opengl.GL11;
 
