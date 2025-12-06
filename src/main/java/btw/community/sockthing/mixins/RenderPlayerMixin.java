@@ -63,7 +63,7 @@ public abstract class RenderPlayerMixin extends RenderLiving {
                     }
                 }
 
-                MobHeadTileEntityRenderer.headRenderer.renderMobHead(player.ticksExisted, -0.5F, 0.0F, -0.5F, 1, 180.0F, armorItemInSlot.getItemDamage(), fleeceColor);
+                MobHeadTileEntityRenderer.headRenderer.renderMobHead(player.ticksExisted, -0.5F, 0.0F, -0.5F, 1, 180.0F, armorItemInSlot.getItemDamage(), fleeceColor, true);
             }
         }
     }

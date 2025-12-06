@@ -158,7 +158,7 @@ public class MobHeadType {
                 0.75F, 8/16F, 0.75F);
     }
 
-    public float translateModel(float xPos, float yPos, float zPos, int direction, float rotation, int type, int fleeceColor){
+    public float translateModel(float xPos, float yPos, float zPos, int direction, float rotation, int type, int fleeceColor, boolean entityWearing){
 
         GL11.glTranslatef(xPos + 0.5F, yPos, zPos + 0.5F);  // ← kept exactly
 

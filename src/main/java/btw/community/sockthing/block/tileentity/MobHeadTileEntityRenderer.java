@@ -2,8 +2,9 @@ package btw.community.sockthing.block.tileentity;
 
 import btw.community.sockthing.block.models.DragonHeadModel;
 import btw.community.sockthing.block.models.MobHeadModel;
+import btw.community.sockthing.block.models.SilverfishHeadModel;
 import btw.community.sockthing.block.models.VillagerHeadModel;
-import btw.community.sockthing.utils.CreeperHeadType;
+import btw.community.sockthing.utils.SilverfishHeadType;
 import btw.community.sockthing.utils.MobHeadType;
 import btw.community.sockthing.utils.MobHeadsUtil;
 import net.fabricmc.api.EnvType;
@@ -25,13 +26,14 @@ public class MobHeadTileEntityRenderer extends TileEntitySpecialRenderer
     public static final VillagerHeadModel VILLAGER = new VillagerHeadModel(true, true, false);
     public static final VillagerHeadModel WITCH = new VillagerHeadModel(true, false, true);
     public static final DragonHeadModel DRAGON = new DragonHeadModel();
+    public static final SilverfishHeadModel SILVERFISH = new SilverfishHeadModel(0, 0, 32, 32);
 
     /**
      * Render a skull tile entity.
      */
     public void renderTileEntityMobHeadAt(MobHeadTileEntity par1TileEntitySkull, double par2, double par4, double par6, float par8)
     {
-        this.renderMobHead(par1TileEntitySkull.ticksExisted, (float)par2, (float)par4, (float)par6, par1TileEntitySkull.getBlockMetadata() & 7, (float)(par1TileEntitySkull.getHeadRotation() * 360) / 16.0F, par1TileEntitySkull.getHeadType(), par1TileEntitySkull.getFleeceColor());
+        this.renderMobHead(par1TileEntitySkull.ticksExisted, (float)par2, (float)par4, (float)par6, par1TileEntitySkull.getBlockMetadata() & 7, (float)(par1TileEntitySkull.getHeadRotation() * 360) / 16.0F, par1TileEntitySkull.getHeadType(), par1TileEntitySkull.getFleeceColor(), false);
     }
 
     /**
@@ -43,7 +45,7 @@ public class MobHeadTileEntityRenderer extends TileEntitySpecialRenderer
         headRenderer = this;
     }
 
-    public void renderMobHead(float partialTicks, float par1, float par2, float par3, int meta, float rot, int type, int fleeceColor)
+    public void renderMobHead(float partialTicks, float par1, float par2, float par3, int meta, float rot, int type, int fleeceColor, boolean entityWearing)
     {
         MobHeadType mobHead = MobHeadsUtil.mobHeads.get(type);
         MobHeadModel model = MOB;
@@ -59,7 +61,7 @@ public class MobHeadTileEntityRenderer extends TileEntitySpecialRenderer
 
 
         if (mobHead != null){
-            rot = mobHead.translateModel(par1, par2, par3, meta, rot, type, fleeceColor);
+            rot = mobHead.translateModel(par1, par2, par3, meta, rot, type, fleeceColor, entityWearing);
         }
 
         float var10 = 0.0625F;
@@ -79,7 +81,7 @@ public class MobHeadTileEntityRenderer extends TileEntitySpecialRenderer
 
         if (mobHead != null){
             if (mobHead.getGlowingTexture() != null) {
-                if (MobHeadsUtil.mobHeads.get(mobHead.getId()) instanceof CreeperHeadType){
+                if (mobHead.getId() == MobHeadsUtil.CREEPER_SPECIAL){
                     renderCreeperGlow( model, partialTicks, rot, mobHead.getGlowingTexture());
                 }
                 else renderGlowingEyes( model, rot, mobHead.getGlowingTexture());

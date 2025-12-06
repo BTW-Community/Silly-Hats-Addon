@@ -278,11 +278,16 @@ public class SHItems {
                 "mob.wither.hurt",
                 MobHeadTileEntityRenderer.BASE, "witherSpecialEyes"));
 
-        MobHeadsUtil.addNewMobHead( new CreeperHeadType(
+        MobHeadsUtil.addNewMobHead( new MobHeadType(
                 MobHeadsUtil.CREEPER_SPECIAL, "creeperSpecial",
                 "random.explode", 4.0F, (1.0F + (random.nextFloat() - random.nextFloat()) * 0.2F) * 0.7F,
                 MobHeadTileEntityRenderer.MOB,
                 "/mob/creeper.png", "/armor/power.png"));
+
+        MobHeadsUtil.addNewMobHead( new SilverfishHeadType(
+                MobHeadsUtil.SILVERFISH, "silverfish",
+                "mob.silverfish.say", 1.0F, 1.0F,
+                MobHeadTileEntityRenderer.SILVERFISH));
 
     }
 }

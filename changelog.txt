@@ -9,3 +9,4 @@
 - Added Dragon Head
 - Added Wither Head
 - Added Charged Creeper Head
+- Added Silverfish Head

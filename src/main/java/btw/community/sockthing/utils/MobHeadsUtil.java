@@ -62,6 +62,7 @@ public class MobHeadsUtil {
     public static final int WITHER = 52;
     public static final int WITHER_SPECIAL = 53;
     public static final int CREEPER_SPECIAL = 54;
+    public static final int SILVERFISH = 55;
 
     public static final TreeMap<Integer, MobHeadType> mobHeads = new TreeMap<>();
 
