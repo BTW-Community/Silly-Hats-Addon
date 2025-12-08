@@ -12,6 +12,7 @@ import net.fabricmc.api.Environment;
 import net.minecraft.src.*;
 
 import java.util.List;
+import java.util.TreeMap;
 
 public class MobHeadItem extends Item {
      private Block block;
@@ -138,12 +139,7 @@ public class MobHeadItem extends Item {
      */
     public Icon getIconFromDamage(int itemDamage)
     {
-//        if (itemDamage < 0 || itemDamage >= MobHeadsUtil.mobHeads.size())
-//        {
-//            itemDamage = 0;
-//        }
-
-        return this.icons[itemDamage];
+        return this.icons.get(itemDamage);
     }
 
     /**
@@ -161,11 +157,6 @@ public class MobHeadItem extends Item {
     public String getUnlocalizedName(ItemStack itemStack)
     {
         int type = itemStack.getItemDamage();
-
-//        if (type < 0 || type >= MobHeadsUtil.mobHeads.size())
-//        {
-//            type = 0;
-//        }
 
         if (MobHeadsUtil.mobHeads.get(type) instanceof SheepHeadType && itemStack.hasTagCompound())
         {
@@ -188,20 +179,20 @@ public class MobHeadItem extends Item {
         return stack.getItemDamage() == 3 && stack.hasTagCompound() && stack.getTagCompound().hasKey("SkullOwner") ? StatCollector.translateToLocalFormatted("item.skull.player.name", new Object[] {stack.getTagCompound().getString("SkullOwner")}): super.getItemDisplayName(stack);
     }
 
-    private Icon[] icons;
+    private TreeMap<Integer, Icon> icons;
     private Icon[] sheepIcons;
     private Icon[] sheepFamishedIcons;
     private Icon[] sheepStarvingIcons;
 
     public void registerIcons(IconRegister register)
     {
-        this.icons = new Icon[1024];
+        this.icons = new TreeMap<>();
         this.sheepIcons = new Icon[16];
         this.sheepFamishedIcons = new Icon[16];
         this.sheepStarvingIcons = new Icon[16];
 
         for (MobHeadType mobHead : MobHeadsUtil.mobHeads.values()){
-            this.icons[mobHead.getId()] = register.registerIcon("SHItemMobHead_" + mobHead.getName());
+            this.icons.put(mobHead.getId(), register.registerIcon("SHItemMobHead_" + mobHead.getName()));
         }
 
         for (int j = 0; j < sheepIcons.length; ++j)

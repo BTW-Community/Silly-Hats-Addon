@@ -73,9 +73,6 @@ public class MobHeadsUtil {
         if (mobHeads.containsKey(mobHead.getId())) {
             throw new IllegalArgumentException("Mob head ID: " + mobHead.getId() + " already in use!");
         }
-        else if (mobHead.getId() > 1023){
-            throw new IllegalArgumentException("Mob head ID: " + mobHead.getId() + " too high! Max ID is 1023");
-        }
         mobHeads.put(mobHead.getId(), mobHead);
     }
 
